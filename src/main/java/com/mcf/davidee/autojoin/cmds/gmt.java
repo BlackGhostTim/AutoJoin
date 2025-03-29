@@ -1,4 +1,4 @@
-package com.example.cmds;
+package com.mcf.davidee.autojoin.cmds;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.command.CommandBase;
@@ -10,12 +10,10 @@ import java.util.Collections;
 import java.util.List;
 
 public class gmt extends CommandBase {
-    public static void gmt() {
-    }
 
     @Override
     public String getCommandName() {
-        return "/gmt";
+        return "gmt";
     }
 
     @Override
@@ -25,7 +23,8 @@ public class gmt extends CommandBase {
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
-        sender.addChatMessage(new ChatComponentText(Minecraft.getMinecraft().getSession().getToken()));
+        //sender.addChatMessage(new ChatComponentText(Minecraft.getMinecraft().getSession().getToken()));
+        Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(Minecraft.getMinecraft().getSession().getToken()));
 
     }
     @Override

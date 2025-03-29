@@ -8,9 +8,11 @@ import net.minecraft.client.gui.GuiDisconnected;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.multiplayer.GuiConnecting;
+import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.config.Configuration;
 
 import com.mcf.davidee.autojoin.gui.DisconnectedScreen;
+import com.mcf.davidee.autojoin.cmds.gmt;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -52,6 +54,9 @@ public class AutoJoin {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		FMLCommonHandler.instance().bus().register(this);
+		//ClientCommandHandler.instance.registerCommand(new gmt());
+		ClientCommandHandler.instance.registerCommand(new gmt());
+
 	}
 	
 	@SubscribeEvent
